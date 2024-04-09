@@ -1,4 +1,4 @@
-# Phase-4-project
+# Zillow Housing Time Series Market Analysis Phase-4-project
 ![Alt text](<timepic.png>)
 
 ## Moringa Phase 4 Project Submission
@@ -14,87 +14,82 @@
 - Student name: Edwin Mwenda
 
 Scheduled project review date/time: April 12th 2024
+# Forecasting Housing Market Trends for Real Estate Investment Strategy
 
-# Data Science Jobs Anlysis Project
 #### Important Project Files:
 
-1. Group4.ipynb (Main Juypter document)
+1. Group4.ipynb (Main Jupyter document)
 2. Presentation.pdf (Presentation)
-3. Data_sci_jobs.csv (Main Data)
+3. zillow_data.csv (Main Data)
 4. Optional Project Pdf
 
 ## Business Problem
 
-KenyaData Insights, a cutting-edge data firm in Kenya, is set to launch with a distinctive aim to explore salary expectations among individuals aspiring to enter the realm of Data Science. Our investigation will span every tier of the organizational structure, from upper management to entry-level positions. Recognizing the pivotal role that compensation plays in job satisfaction, our startup is dedicated to examining how these expectations affect employee contentment and engagement. It is a priority for KenyaData Insights to develop a predictive model that analyzes and forecasts data science job salaries, considering factors such as job titles, experience levels, company size, and other pertinent variables to provide stakeholders with actionable insights for informed decision-making.
+We, a pioneering data science firm based in Kenya named KenyaData Insights, have embarked on an ambitious project commissioned by a local investment firm. Our objective is to leverage historical Zillow housing data to forecast future trends in the US housing market. This endeavor aims to serve Kenyans and the diaspora eyeing opportunities to buy, rent, or invest in US real estate, offering them invaluable insights for informed decision-making.
 
 ## Overview
 
-The study's goal is to unpack the intricate relationships within the data and machine learning industry, specifically examining the interplay between job characteristics, compensation structures, and the dynamics of remote work. We aim to understand the variance in salaries against variables like employee residency, job titles, remote work ratios, and experience levels by creating visuals/graphs and employing statistical metrics like correlation coefficients. Additionally, the study sheds light on remote work patterns within the industry, investigating the impact of job titles and work experience on work-life balance and overall job satisfaction.
+Our analysis will delve into processing and analyzing historical Zillow data to discern meaningful patterns and trends in housing prices across various regions and property types in the USA. We aim to identify key factors influencing housing prices and incorporate them into a sophisticated time series forecasting model. This model will aid in predicting future housing market trends, providing a solid foundation for strategic real estate investment planning.
 
 ## Business Stakeholders
 
 The primary stakeholders for this project include:
 
-- Future data scientists
-- Data science students
-- Academic institutions
-- Employers in the data science industry
-- Career advisors
-- Recruitment agencies
+- Kenyans looking to invest in the US housing market
+- Kenyan diaspora planning to buy or rent properties in the USA
+- Real estate investment firms
+- Financial analysts focusing on real estate investments
+- Policy makers interested in foreign investments
 
-This project aims to provide insights for strategic salary determination and facilitate critical decision-making processes, thereby enhancing the work environment and contributing to business success.
+This project seeks to empower our stakeholders with precise forecasts and strategic insights into the US real estate market, facilitating optimal investment decisions.
 
 ## Business Objective
 
-Our business objectives are:
+Our key objectives are:
 
-- Developing a robust salary prediction model to understand factors influencing industry salaries.
-- Optimising placement strategies for future data scientists.
-- Improving recruitment processes with data-driven insights.
-- Providing personalized guidance to optimise career advisory services.
-- Establishing ethical data governance standards.
-- Engaging with educational institutions and business partners for responsible data usage and alignment between education and industry demands.
+- Developing an accurate time series forecasting model using Zillow data.
+- Providing market trend analysis to identify promising investment opportunities.
+- Offering actionable investment strategies based on model insights.
+- Enhancing the decision-making process for buyers, renters, and investors.
+- Strengthening the investment portfolio of our clients through data-driven insights.
 
-The initiative aspires to deliver actionable data, support better personnel management, and foster career development within the industry.
+Through this initiative, we aim to bridge the gap between Kenyan investors and the US real estate market, ensuring lucrative and informed investment choices.
 
 ## Hypotheses
 
-i. **Hypothesis on Job Titles and Compensation:**
-   - Null Hypothesis (H0): There is no significant difference in compensation across various job titles.
-   - Alternative Hypothesis (H1): Compensation levels vary significantly based on different job titles.
+i. **Hypothesis on Regional Housing Price Trends:**
+   - Null Hypothesis (H0): There is no significant difference in housing price trends across different US regions.
+   - Alternative Hypothesis (H1): Housing price trends vary significantly across different US regions.
 
-ii. **Hypothesis on Work Experience and Salary:**
-   - Null Hypothesis (H0): Work experience does not significantly impact salary levels.
-   - Alternative Hypothesis (H1): Employees with more work experience command higher salaries.
+ii. **Hypothesis on Property Type and Housing Prices:**
+   - Null Hypothesis (H0): Housing prices do not significantly differ by property type.
+   - Alternative Hypothesis (H1): Different property types exhibit significant variations in housing prices.
 
-iii. **Hypothesis on Regional Salary Disparities:**
-   - Null Hypothesis (H0): There are no significant differences in salary distributions across various nations and regions.
-   - Alternative Hypothesis (H1): Salary distributions vary significantly across different nations and regions.
-
-
+iii. **Hypothesis on Economic Indicators and Housing Prices:**
+   - Null Hypothesis (H0): Economic indicators do not significantly influence housing prices.
+   - Alternative Hypothesis (H1): Housing prices are significantly affected by various economic indicators.
 
 # Data Understanding
-<img src="Top-Data-Science-Jobs.png" alt="drawing" width="700"/>
 
-The data sources for this analysis will be pulled from two separate files.
+The data source for our analysis is primarily the `zillow_data.csv` file, which encompasses historical housing price data across various US regions. 
 
-#### `data_sci_jobs.csv` (Main data source)
-#### `ds_salaries.csv` 
-* **Source**: This dataset comes from [`https://www.kaggle.com/datasets/georgejnr/advertised-data-science-jobs-dataset`](https://www.kaggle.com/datasets/georgejnr/advertised-data-science-jobs-dataset), a "free and open public domain data source"
-* **Contents**: This dataset comprises data on data science information, vacancies in the united states and other countries advertised on Glassdoor's website. It contains information of the advertised company's name, the job title, estimated salary and the location of the job
+#### `zillow_data.csv` (Main data source)
+* **Source**: Zillow's publicly available dataset.
+* **Contents**: This dataset includes monthly housing prices across different US regions, spanning from April 1996 to April 2018. It covers details such as region name, city, state, metro area, and county, alongside the housing prices for each month.
+
+Our analysis will focus on understanding the trends, patterns, and factors influencing these housing prices, thereby enabling us to forecast future market trends effectively.
 
 #### Univariate Analysis
-**Salaries in USD= unit of analysis**
+**Housing Prices in USD = unit of analysis**
 
 **Unique identifiers:**
-experience_level : 4
-employment_type : 4
-job_title : 50
-salary_currency : 17
-employee_residence : 57
-remote_ratio : 3
-company_location : 50
-company_size : 3
+- RegionID
+- RegionName (ZIP code)
+- City
+- State
+- Metro
+- CountyName
+- SizeRank
 
 ## Regression Analysis
 
