@@ -7,7 +7,7 @@
 
 - Student name: Kenneth Karanja
 - Student name: Pete Njagi
-- Student name: James Koli
+- Student name: James Koli (Group Leader)
 - Student name: Tom Mwabire
 - Student name: Paul Mwangi
 - Student name: Lee Ndung'u
