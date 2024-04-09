@@ -15,6 +15,7 @@
 
 Scheduled project review date/time: April 12th 2024
 # Forecasting Housing Market Trends for Real Estate Investment Strategy
+![Alt text](<zillow.png>)
 
 #### Important Project Files:
 
