@@ -95,19 +95,19 @@ Our analysis will focus on understanding the trends, patterns, and factors influ
 ## Regression Analysis
 
 ### Data Visualizations
-<img src="/Images/NotebookExports/1.png" alt="drawing" width="500"/>
+<img src="/Images/1.png" alt="drawing" width="500"/>
 
-<img src="/Images/NotebookExports/2.png" alt="drawing" width="500"/>
+<img src="/Images/2.png" alt="drawing" width="500"/>
 
-<img src="/Images/NotebookExports/3.png" alt="drawing" width="500"/>
+<img src="/Images/3.png" alt="drawing" width="500"/>
 
-<img src="/Images/NotebookExports/4.png" alt="drawing" width="500"/>
+<img src="/Images/4.png" alt="drawing" width="500"/>
 
-<img src="/Images/NotebookExports/5.png" alt="drawing" width="500"/>
+<img src="/Images/5.png" alt="drawing" width="500"/>
 
-<img src="/Images/NotebookExports/6.png" alt="drawing" width="500"/>
+<img src="/Images/6.png" alt="drawing" width="500"/>
 
-<img src="/Images/NotebookExports/7.png" alt="drawing" width="500"/>
+<img src="/Images/7.png" alt="drawing" width="500"/>
 
 <img src="/Images/NotebookExports/8.png" alt="drawing" width="500"/>
 
