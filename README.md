@@ -97,13 +97,23 @@ Our analysis will focus on understanding the trends, patterns, and factors influ
 ### Data Visualizations
 <img src="/images/1.png" alt="drawing" width="500"/>
 
+The graph shows property counts by county. Maricopa, Los Angeles, and Jefferson top the list. Middlesex, Jackson, and Harris follow closely. Cook, Montgomery, Washington, and Orange also have significant counts. Counts range from around 200 to over 250
+
 <img src="/images/2.png" alt="drawing" width="500"/>
+
+The graph displays property counts by state. California (CA) has the highest count. New York (NY) and Texas (TX) follow closely. Pennsylvania (PA), Florida (FL), and Ohio (OH) also have substantial counts. Illinois (IL), New Jersey (NJ), Michigan (MI), and Indiana (IN) complete the list
 
 <img src="/images/3.png" alt="drawing" width="500"/>
 
+The graph shows ROI of property in the top 10 states. DC, HI, and CA have the highest ROI. Other states, like SD, CO, and MA, also show significant ROI. NY, WA, VT, and FL complete the list with varying ROI levels
+
 <img src="/images/4.png" alt="drawing" width="500"/>
 
+The scatter plot illustrates ROI against the top 10 states. CA, NY, and TX exhibit the highest ROIs. PA, FL, and OH also show notable ROIs. Additionally, IL, NJ, MI, and IN complete the list, each with varying ROI levels.
+
 <img src="/images/5.png" alt="drawing" width="500"/>
+
+The scatter plot demonstrates ROI against the top 10 counties. Los Angeles, Jefferson, and Orange counties exhibit the highest ROIs. Washington, Montgomery, and Cook also show notable ROIs. Additionally, Harris, Jackson, Middlesex, and Maricopa complete the list, each with varying ROI levels.
 
 <img src="/images/6.png" alt="drawing" width="500"/>
 
