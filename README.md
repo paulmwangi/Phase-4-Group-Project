@@ -26,11 +26,12 @@ Scheduled project review date/time: April 12th 2024
 
 ## Business Problem
 
-We, a pioneering data science firm based in Kenya named KenyaData Insights, have embarked on an ambitious project commissioned by a local investment firm. Our objective is to leverage historical Zillow housing data to forecast future trends in the US housing market. This endeavor aims to serve Kenyans and the diaspora eyeing opportunities to buy, rent, or invest in US real estate, offering them invaluable insights for informed decision-making.
+The primary business problem is the lack of visibility and understanding of the US housing market among Kenyan investors. Additionally, there is a need to identify regions that offer promising investment opportunities within the low-cost housing segment. Another challenge is ensuring the accuracy and relevance of predictions amidst periods of market instability, such as the 2008 housing market crash. Therefore, the project aims to address these challenges by providing comprehensive data analysis and forecasting to guide investment decisions effectively.
 
 ## Overview
 
-Our analysis will delve into processing and analyzing historical Zillow data to discern meaningful patterns and trends in housing prices across various regions and property types in the USA. We aim to identify key factors influencing housing prices and incorporate them into a sophisticated time series forecasting model. This model will aid in predicting future housing market trends, providing a solid foundation for strategic real estate investment planning.
+Our client, a distinguished real estate investment firm based in Kenya, is dedicated to facilitating Kenyan investors' access to the thriving US housing market. Specializing in low-cost housing investments, they cater to the needs of local Kenyans and diaspora members looking to diversify their investment portfolios. Through rigorous data analysis and strategic insights, the firm empowers investors with the knowledge required to navigate the complexities of the US real estate market successfully. By democratizing access to wealth-building opportunities and fostering financial inclusion, they contribute to the economic growth and prosperity of Kenya while enabling individuals to secure their financial futures.
+
 
 ## Business Stakeholders
 
@@ -56,20 +57,6 @@ Our key objectives are:
 
 Through this initiative, we aim to bridge the gap between Kenyan investors and the US real estate market, ensuring lucrative and informed investment choices.
 
-## Hypotheses
-
-i. **Hypothesis on Regional Housing Price Trends:**
-   - Null Hypothesis (H0): There is no significant difference in housing price trends across different US regions.
-   - Alternative Hypothesis (H1): Housing price trends vary significantly across different US regions.
-
-ii. **Hypothesis on Property Type and Housing Prices:**
-   - Null Hypothesis (H0): Housing prices do not significantly differ by property type.
-   - Alternative Hypothesis (H1): Different property types exhibit significant variations in housing prices.
-
-iii. **Hypothesis on Economic Indicators and Housing Prices:**
-   - Null Hypothesis (H0): Economic indicators do not significantly influence housing prices.
-   - Alternative Hypothesis (H1): Housing prices are significantly affected by various economic indicators.
-
 # Data Understanding
 
 The data source for our analysis is primarily the `zillow_data.csv` file, which encompasses historical housing price data across various US regions. 
@@ -92,8 +79,6 @@ Our analysis will focus on understanding the trends, patterns, and factors influ
 - CountyName
 - SizeRank
 
-## Regression Analysis
-
 ### Data Visualizations
 <img src="/images/1.png" alt="drawing" width="500"/>
 
@@ -115,22 +100,82 @@ The scatter plot illustrates ROI against the top 10 states. CA, NY, and TX exhib
 
 The scatter plot demonstrates ROI against the top 10 counties. Los Angeles, Jefferson, and Orange counties exhibit the highest ROIs. Washington, Montgomery, and Cook also show notable ROIs. Additionally, Harris, Jackson, Middlesex, and Maricopa complete the list, each with varying ROI levels.
 
-<img src="/images/6.png" alt="drawing" width="500"/>
+### ARIMA & Modelling
 
-<img src="/images/7.png" alt="drawing" width="500"/>
+                              SARIMAX Results                                
+==============================================================================
+Dep. Variable:                    ret   No. Observations:                   54
+Model:                 ARIMA(2, 0, 1)   Log Likelihood                 210.348
+Date:                Thu, 11 Apr 2024   AIC                           -410.696
+Time:                        21:23:11   BIC                           -400.751
+Sample:                    08-01-2010   HQIC                          -406.860
+                         - 01-01-2015                                         
+Covariance Type:                  opg                                         
+==============================================================================
+                 coef    std err          z      P>|z|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          0.0115      0.008      1.456      0.145      -0.004       0.027
+ar.L1          0.4476      0.245      1.826      0.068      -0.033       0.928
+ar.L2          0.4028      0.242      1.661      0.097      -0.072       0.878
+ma.L1          0.8430      0.186      4.536      0.000       0.479       1.207
+sigma2      2.304e-05   3.51e-06      6.571      0.000    1.62e-05    2.99e-05
+===================================================================================
+Ljung-Box (L1) (Q):                   0.35   Jarque-Bera (JB):                 8.82
+Prob(Q):                              0.55   Prob(JB):                         0.01
+Heteroskedasticity (H):               0.23   Skew:                             0.12
+Prob(H) (two-sided):                  0.00   Kurtosis:                         4.96
+===================================================================================
 
-<img src="/Images/NotebookExports/8.png" alt="drawing" width="500"/>
+Warnings:
+[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+
+![image](https://github.com/PeteZDj/Phase-4-Group-Project/assets/151729172/399a3b3a-fd0b-4370-b811-9a2e926058b7)
 
 
-## Setup for Jupyter Notebook
+To meet the normality assumptions, the residuals must not be correlated and have a normal distribution. For this case:
 
-To set up a Jupyter Notebook for analyzing the data:
+The residuals are normally distributed because, as the qq-plot on the bottom left illustrates, they follow a linear trend line.
+There are minimal correlations with their lagged version, as indicated by the correlogram plot on the bottom left. This indicates that our series doesn't exhibit any clear seasonality.
+The residuals are positively distributed, as indicated by the bell curve on the histogram.
 
-1. Install Anaconda which includes Jupyter Notebook, Python, and other data science packages. Visit [Anaconda's website](https://www.anaconda.com/products/distribution) and download the installer for your operating system.
-2. After installation, launch Anaconda Navigator and start Jupyter Notebook, or open a terminal (or command prompt) and type `jupyter notebook` to start the Jupyter Notebook server.
-3. Create a new Python notebook from the Jupyter dashboard.
-4. Import the required libraries (e.g., pandas, matplotlib, seaborn, Statsmodels) at the beginning of your notebook.
-5. Load your dataset using pandas, for example: `df = pd.read_csv('path_to_your_data.csv')`.
-6. Proceed with your data analysis and visualization.
+## Testing the model's performance
 
-For more detailed instructions, you can refer to the [official Jupyter documentation](https://jupyter.readthedocs.io/en/latest/).
+![image](https://github.com/PeteZDj/Phase-4-Group-Project/assets/151729172/23b8bc09-b7b3-4dda-95ee-3f4442581336)
+
+The testing forecasting model performance graph above illustrates the accuracy and reliability of our forecasted returns. By comparing the observed returns (blue line) with the prediction series (red line), we can assess how well our model captures the underlying patterns and trends in the data. The close alignment between the two lines indicates that our forecasting model effectively captures the dynamics of the time series data, suggesting its robust performance in predicting future returns.
+
+### Model Evaluation
+
+![image](https://github.com/PeteZDj/Phase-4-Group-Project/assets/151729172/cd92e879-8502-4ed5-a414-12116fdab11f)
+
+The forecasted values (depicted by the red line) in the graph above show a consistent trend in home price movements over time, aligning closely with the actual observed values (represented by the blue line). This indicates the model's effectiveness in capturing the underlying patterns in the data, providing valuable insights for stakeholders. Such accurate forecasts are crucial for making informed decisions regarding investments or understanding market trends within the 85035 area.
+
+### Conclusion & Recommendations
+
+![image](https://github.com/PeteZDj/Phase-4-Group-Project/assets/151729172/46ee45ee-9b5b-472f-abc7-af877223a43c) 
+
+With the exception of the 85035 zipcode; every zipcode has an encouraging projected price because they are all in the green.
+
+We can determine our top five recommendations and their anticipated return on investment after three years based on the graph above.
+
+Zip code 94804: This area's housing prices have been steadily rising, and a high return on investment is expected. Its stable market dynamics and favourable price trends make it a good fit for our client's investment portfolio.
+
+Zip code 75217 With its promising combination of affordability and appreciation potential, this area represents an excellent opportunity for our client. Our analysis shows a positive trajectory in housing prices, indicating a high ROI potential.
+
+Zip code 19143: This zipcode demonstrates resilience in the face of market fluctuations, with consistent growth and promising investment opportunities. Its affordability and upward price trends make it an appealing option for our client looking for long-term returns.
+
+Zip code 60628: This area has strong growth potential despite fluctuations in the overall market, especially in low-cost housing segments. Given the current favourable market conditions and anticipated growth, it is highly recommended for our client's investment plan.
+
+Zip code 48227: This area offers our client an appealing investment opportunity because of its stability in the market and affordability. It has the potential to yield substantial returns over time due to its steady increase in housing prices and bright future prospects.
+
+After that, the investor has the option to invest in any of the zip codes listed above, with the exception of 85035, which offers a negative return on investment.
+
+
+In conclusion, our thorough examination of the US housing market, with an emphasis on affordable housing investment opportunities, offers our Kenyan real estate investment firm client insightful information. By using rigorous data preprocessing, time series modelling, and exploratory data analysis, we have predicted future results and found encouraging trends for a number of zip codes. Our research showed that although housing prices fluctuated in some areas, they consistently increased in other areas, providing favourable returns on investment.
+
+For example in our case, the zipcode 94804 turned out to be the best suggestion with the highest estimated return on investment. In addition, we were able to formulate well-informed recommendations that were customised to our client's investment goals thanks to our analysis of the dynamics of the housing market, which included price trends, seasonality, and market stability. By using these insights, our client's investment portfolio can be diversified, resources can be wisely allocated to take advantage of profitable opportunities, and returns can be maximised.
+
+In order to maximise long-term profitability and adjust to shifting market conditions, it will be essential to regularly review investment strategies and keep a close eye on market trends. Our client can confidently and precisely navigate the ever-changing US real estate market by incorporating data-driven decision-making processes into their investment strategy, setting themselves up for long-term success and sustainable growth.
+
+
+
