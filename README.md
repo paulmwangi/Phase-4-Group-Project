@@ -102,32 +102,34 @@ The scatter plot demonstrates ROI against the top 10 counties. Los Angeles, Jeff
 
 ### ARIMA & Modelling
 
-                              SARIMAX Results                                
+
+                               SARIMAX Results                                
 ==============================================================================
 Dep. Variable:                    ret   No. Observations:                   54
 Model:                 ARIMA(2, 0, 1)   Log Likelihood                 210.348
-Date:                Thu, 11 Apr 2024   AIC                           -410.696
-Time:                        21:23:11   BIC                           -400.751
+Date:                Fri, 12 Apr 2024   AIC                           -410.696
+Time:                        08:04:15   BIC                           -400.751
 Sample:                    08-01-2010   HQIC                          -406.860
                          - 01-01-2015                                         
 Covariance Type:                  opg                                         
-==============================================================================
+
                  coef    std err          z      P>|z|      [0.025      0.975]
 ------------------------------------------------------------------------------
 const          0.0115      0.008      1.456      0.145      -0.004       0.027
-ar.L1          0.4476      0.245      1.826      0.068      -0.033       0.928
-ar.L2          0.4028      0.242      1.661      0.097      -0.072       0.878
+ar.L1          0.4476      0.245      1.827      0.068      -0.033       0.928
+ar.L2          0.4027      0.242      1.661      0.097      -0.072       0.878
 ma.L1          0.8430      0.186      4.536      0.000       0.479       1.207
-sigma2      2.304e-05   3.51e-06      6.571      0.000    1.62e-05    2.99e-05
-===================================================================================
+sigma2      2.304e-05    3.5e-06      6.572      0.000    1.62e-05    2.99e-05
+
 Ljung-Box (L1) (Q):                   0.35   Jarque-Bera (JB):                 8.82
 Prob(Q):                              0.55   Prob(JB):                         0.01
 Heteroskedasticity (H):               0.23   Skew:                             0.12
-Prob(H) (two-sided):                  0.00   Kurtosis:                         4.96
-===================================================================================
+Prob(H) (two-sided):                  0.00   Kurtosis:                         4.97
+
 
 Warnings:
-[1] Covariance matrix calculated using the outer product of gradients (complex-step).
+[1] Covariance matrix calculated using the outer product of gradients (complex-step)
+
 
 ![image](https://github.com/PeteZDj/Phase-4-Group-Project/assets/151729172/399a3b3a-fd0b-4370-b811-9a2e926058b7)
 
